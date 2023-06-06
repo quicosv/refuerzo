@@ -13,9 +13,10 @@ Objetivo: Desarrollar un generador de parejas de acuerdo a dos arrays cuyos elem
   - Se generarán las parejas de forma aleatoria, teniendo en cuenta que cada pareja constará de un miembro de cada grupo.
   - Se creará una tabla HTML con el resultado final con este diseño:
 Parejas resultantes
-Juan	Ana
-Marta	Javi
-…	…
+
+Juan Ana
+Marta Javi
+… …
 
 ## ACTIVIDAD 2
 
@@ -31,14 +32,14 @@ Objetivo: Desarrollar un cronómetro.
 - El botón Parar detendrá el crono (utilizar clearInterval).
 - El botón Reiniciar pondrá todos los contadores a 0.
 
-## ACTIVIDAD 3 
+## ACTIVIDAD 3
 
 Objetivo: Desarrollar un componente en React que sea un reloj que se actualice cada segundo.
 
 - Crear un componente React para reutilizarlo donde queramos que sea un reloj con formato horas:minutos:segundos que cada segundo actualice la hora.
 - Utilizar las funciones de fecha de JavaScript y setInterval.
 
-## ACTIVIDAD 4 
+## ACTIVIDAD 4
 
 Objetivo: Desarrollar un contador de palabras y caracteres.
 
@@ -48,7 +49,7 @@ Objetivo: Desarrollar un contador de palabras y caracteres.
 - En un cuadro de texto adyacente pondremos un número de caracteres máximo.
 - Si conforme vamos escribiendo el número de caracteres sobrepasa el máximo, por cada nuevo carácter sonará un pitido (ver ejemplos JavaScript de eventos donde usábamos el beep). También si borramos caracteres y la longitud sigue sobrepasando el máximo.
 
-## ACTIVIDAD 5 
+## ACTIVIDAD 5
 
 Objetivo: Desarrollar un juego de apuestas.
 
@@ -62,7 +63,7 @@ Objetivo: Desarrollar un juego de apuestas.
 - También se anunciará de alguna manera al usuario si ha ganado o ha perdido.
 - Si el saldo es inferior a cero, se deshabilitará el botón del formulario para que no pueda volver a jugar.
 
-## ACTIVIDAD 6 
+## ACTIVIDAD 6
 
 Objetivo: Dibujar unos patrones en una página web utilizando bucles.
 
@@ -96,7 +97,7 @@ Objetivo: Dibujar unos patrones en una página web utilizando bucles.
     - 8 puntos
     - Cada fila siguiente hasta la última tendrá un punto menos.
 
-## ACTIVIDAD 7 
+## ACTIVIDAD 7
 
 Objetivo: Trabajar con arrays.
 
@@ -108,14 +109,14 @@ Objetivo: Trabajar con arrays.
 - Generar una copia de un array pero con todos los elementos incrementado en 1.
 - Calcular el promedio y mostrarlo en consola.
 
-## ACTIVIDAD 8 
+## ACTIVIDAD 8
 
 Objetivo: Trabajar con strings.
 
 - Mediante un formulario, introduciremos un texto y comunicaremos al usuario si el texto introducido es un palíndromo.
 - Un texto es palíndromo si se lee igual de izquierda a derecha que de derecha a izquierda.
 
-## ACTIVIDAD 9 
+## ACTIVIDAD 9
 
 Objetivo: Desarrollar una galería de imágenes automática.
 
@@ -126,11 +127,10 @@ Objetivo: Desarrollar una galería de imágenes automática.
 - Si pulsamos un botón “Revertir”, las imágenes se irán sucediendo en orden inverso.
 - Si pulsamos de nuevo en el botón “Revertir” volveremos de nuevo al orden normal.
 
-## ACTIVIDAD 10 
+## ACTIVIDAD 10
 
 Objetivo: Desarrollar una aplicación en React que creará de forma dinámica una lista de personas.
 
 - Mediante un formulario, introduciremos un nombre y un apellido. Al ejecutar el submit, ambos valores se convertirán en un objeto que añadiremos a un array.
 - Ese array se visualizará en una lista. A la derecha de cada elemento de la lista, incorporaremos un botón “Eliminar” para eliminar la persona de la lista.
 - Una vez se consiga, descentralizaremos la aplicación desarrollando diferentes componentes. La lista será un componente cuyas filas serán el resultado de renderizar un componente fila con los datos de cada persona.
-
