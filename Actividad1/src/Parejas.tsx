@@ -1,11 +1,11 @@
 import { ChangeEvent, FormEvent, useState } from "react";
 import { IMiembro } from "./interfaces/miembro.interface";
-import { IGente } from "./interfaces/gente.interface";
 
 export const Parejas = () => {
 	const [miembro1, setMiembro1] = useState<IMiembro>({ miembro: "" });
 	const [miembro2, setMiembro2] = useState<IMiembro>({ miembro: "" });
-	const grupo1: IGente[] = [];
+	const grupo1: IMiembro[] = [];
+	const grupo2: IMiembro[] = [];
 
 	const onChangeMiembro1 = (e: ChangeEvent<HTMLInputElement>) => {
 		setMiembro1({ miembro: e.target.value });
@@ -17,7 +17,13 @@ export const Parejas = () => {
 
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
+		grupo1.push(miembro1);
+		grupo2.push(miembro2);
 	};
+
+const formarParejas = () => {
+
+};
 
 	return (
 		<>
@@ -32,6 +38,7 @@ export const Parejas = () => {
 					Añadir
 				</button>
 			</form>
+			<button onClick={formarParejas}>Formar parejas</button>
 		</>
 	);
 };
