@@ -26,8 +26,12 @@ export const Palindromo = () => {
 	return (
 		<article>
 			<h2>Palíndromo</h2>
+			<label htmlFor="palabra">Introduce una palabra:</label>
 			<input
+				className="form-control"
+				id="palabra"
 				type="text"
+				required
 				value={palabra}
 				onChange={(e) => setPalabra(e.target.value)}
 			/>
