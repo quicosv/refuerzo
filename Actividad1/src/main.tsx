@@ -4,6 +4,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import { Parejas } from "./Parejas";
 import { Cronometro } from "./Cronometro";
 import { Reloj } from "./reloj";
+import { Palindromo } from "./Palindromo";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 		<main>
 			<Cronometro />
 			<Reloj />
+			<Palindromo/>
 			<Parejas />
 		</main>
 	</React.StrictMode>
