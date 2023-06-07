@@ -53,6 +53,7 @@ export const Cronometro = () => {
 
   return (
     <article>
+      <h2>Cronómetro</h2>
       <span>{formatTime(minutos)}</span>:
       <span>{formatTime(segundos)}</span>:
       <span>{formatTime(decimas)}</span>
