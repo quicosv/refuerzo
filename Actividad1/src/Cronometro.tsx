@@ -9,26 +9,23 @@ export const Cronometro = () => {
   useEffect(() => {
     let intervalId: ReturnType<typeof setInterval> | null = null;
 
-    if (corriendo) {
-      intervalId = setInterval(() => {
+    intervalId = corriendo
+      ? setInterval(() => {
         setDecimas((prevDecimas) => (prevDecimas + 1) % 10);
 
-        if (decimas === 9) {
-          setSegundos((prevSegundos) => (prevSegundos + 1) % 60);
-        }
+        decimas === 9 && setSegundos((prevSegundos) => (prevSegundos + 1) % 60);
 
-        if (segundos === 59 && decimas === 9) {
-          setMinutos((prevMinutos) => (prevMinutos + 1) % 60);
-        }
-      }, 100);
-    }
+        segundos === 59 && decimas === 9 && setMinutos((prevMinutos) => (prevMinutos + 1) % 60);
+      }, 100)
+      : null;
 
     return () => {
       if (intervalId) {
         clearInterval(intervalId);
       }
     };
-  }, [corriendo, decimas, segundos]);
+  }, [corriendo, decimas, segundos, minutos]);
+
 
   const iniciarCronometro = () => {
     setCorriendo(true);
@@ -50,7 +47,7 @@ export const Cronometro = () => {
   };
 
   return (
-    <div>
+    <article>
       <span>{formatTime(minutos)}</span>:
       <span>{formatTime(segundos)}</span>:
       <span>{formatTime(decimas)}</span>
@@ -58,6 +55,6 @@ export const Cronometro = () => {
       <button onClick={iniciarCronometro}>Iniciar</button>
       <button onClick={pararCronometro}>Parar</button>
       <button onClick={reiniciarCronometro}>Reiniciar</button>
-    </div>
+    </article>
   );
 };
