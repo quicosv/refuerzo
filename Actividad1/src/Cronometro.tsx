@@ -11,14 +11,14 @@ export const Cronometro = () => {
 
     if (corriendo) {
       intervalId = setInterval(() => {
-        setDecimas((decimas) => (decimas + 1) % 10);
+        setDecimas((prevDecimas) => (prevDecimas + 1) % 10);
 
         if (decimas === 9) {
-          setSegundos((segundos) => segundos + 1);
+          setSegundos((prevSegundos) => (prevSegundos + 1) % 60);
         }
 
         if (segundos === 59 && decimas === 9) {
-          setMinutos((minutos) => minutos + 1);
+          setMinutos((prevMinutos) => (prevMinutos + 1) % 60);
         }
       }, 100);
     }
@@ -45,11 +45,15 @@ export const Cronometro = () => {
     setCorriendo(false);
   };
 
+  const formatTime = (time: number) => {
+    return time.toString().padStart(2, "0");
+  };
+
   return (
     <div>
-      <span>{decimas}</span>
-      <span aria-live="polite">{`${segundos} segundo${segundos !== 1 ? "s" : ""}`}</span>
-      <span aria-live="polite">{`${minutos} minuto${minutos !== 1 ? "s" : ""}`}</span>
+      <span>{formatTime(minutos)}</span>:
+      <span>{formatTime(segundos)}</span>:
+      <span>{formatTime(decimas)}</span>
       <br />
       <button onClick={iniciarCronometro}>Iniciar</button>
       <button onClick={pararCronometro}>Parar</button>
