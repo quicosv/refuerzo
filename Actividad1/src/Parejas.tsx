@@ -59,11 +59,13 @@ export const Parejas = () => {
 			grupo1.length - 1
 		);
 		// ponemos el useState de emparejaos a true para saber cuándo mostrar los resultados
-		setEmparejaos(true);
+		if (grupo1.length > 0 && grupo2.length > 0) {
+			setEmparejaos(true);
+		}
 	};
 
 	return (
-		<>
+		<article>
 			<h1>Actividad 1 de refuerzo</h1>
 			<hr />
 			<form onSubmit={onSubmit}>
@@ -76,7 +78,11 @@ export const Parejas = () => {
 				</button>
 			</form>
 			<button onClick={formarParejas}>Formar parejas</button>
-			{emparejaos && <h2>Resultados de parejas</h2>}
-		</>
+			{emparejaos && (
+				<>
+				<h3>{grupo1[1]} parejas y {grupo2[0]}</h3>
+				</>
+			)}
+		</article>
 	);
 };
