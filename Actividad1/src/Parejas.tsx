@@ -6,10 +6,10 @@ export const Parejas = () => {
 	const [miembro2, setMiembro2] = useState<IMiembro>({ miembro: "" });
 	const [emparejaos, setEmparejaos] = useState<boolean>(false);
 	// Nos declaramos los arrays con ambos grupos
-	const grupo1: IMiembro[] = [];
-	const grupo2: IMiembro[] = [];
+	const [grupo1, setGrupo1] = useState<IMiembro[]>([]);
+	const [grupo2, setGrupo2] = useState<IMiembro[]>([]);
 	// Aquí creamos array de números donde almacenamos índices aleatorios para luego mostrar las parejas
-	const posicionesDeParejas: number[] = [];
+	const [posicionesDeParejas, setPosicionesDeParejas] = useState<number[]>([]);
 
 	const onChangeMiembro1 = (e: ChangeEvent<HTMLInputElement>) => {
 		setMiembro1({ miembro: e.target.value });
@@ -21,8 +21,8 @@ export const Parejas = () => {
 
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		grupo1.push(miembro1);
-		grupo2.push(miembro2);
+		setGrupo1([...grupo1,miembro1]);
+		setGrupo2([...grupo2,miembro2]);
 	};
 
 	const generadorNumerosAleatoriosUnicos = (
@@ -80,7 +80,7 @@ export const Parejas = () => {
 			<button onClick={formarParejas}>Formar parejas</button>
 			{emparejaos && (
 				<>
-				<h3>{grupo1[1]} parejas y {grupo2[0]}</h3>
+				<h3>{grupo1.length} parejas y {grupo2.length}</h3>
 				</>
 			)}
 		</article>
