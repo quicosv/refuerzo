@@ -14,6 +14,7 @@ const showArrayWhile = (array: number[]): void => {
 	let counter = 0;
 	while (counter < array.length) {
 		console.log(array[counter]);
+		counter++;
 	};
 };
 
