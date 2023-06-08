@@ -66,8 +66,7 @@ export const Parejas = () => {
 
 	return (
 		<article>
-			<h1>Actividad 1 de refuerzo</h1>
-			<hr />
+			<h2>Formador de parejas</h2>
 			<form onSubmit={onSubmit}>
 				<label htmlFor="miembro1">Miembro grupo 1:</label>
 				<input id="miembro1" type="text" onChange={onChangeMiembro1} required />
@@ -80,7 +79,12 @@ export const Parejas = () => {
 			<button onClick={formarParejas}>Formar parejas</button>
 			{emparejaos && (
 				<>
-				<h3>{grupo1.length} parejas y {grupo2.length}</h3>
+				<h3>Número de parejas: {grupo1.length}</h3>
+				<ul>
+					{grupo1.map((x,i) => (
+						<li key={i}>{x.miembro} está emparejado con {grupo2[posicionesDeParejas[i]].miembro}.</li>
+					))}
+				</ul>
 				</>
 			)}
 		</article>
