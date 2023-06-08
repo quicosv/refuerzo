@@ -45,6 +45,19 @@ const calculateAverage = (array: number[]): number => {
 
 // aquí está la función principal, que debe manejar todo el programa
 
-const main = (): void => {};
+const main = (): void => {
+let answer: string | null = prompt("Cantidad de números");
+let userLength: number = parseInt(answer as string);
+if (isNaN(userLength)) {
+	alert('No has escrito un número.');
+}
+else {
+	const yourArray = createArray(userLength);
+	showArrayWhile(yourArray);
+	showArrayFor(yourArray);
+	showArrayForEach(yourArray);
+	calculateAverage(yourArray);
+};
+};
 
 main();
