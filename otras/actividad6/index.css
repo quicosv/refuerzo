@@ -1,0 +1,6 @@
+/* 
+Trato de usar una fuente en la que los caracteres ocupen lo mismo para que los dibujos salgan lo más parecido a como lo podríamos imaginar en braille.
+*/
+span {
+	font-family: 'Courier New', Courier, monospace;
+}
