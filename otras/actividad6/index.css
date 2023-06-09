@@ -4,3 +4,12 @@ Trato de usar una fuente en la que los caracteres ocupen lo mismo para que los d
 span {
 	font-family: 'Courier New', Courier, monospace;
 }
+
+/* Contenido generado para incluir el contenido de los span */
+.empty::before {
+	content: " ";
+}
+
+.dot::before {
+	content: "*";
+}
