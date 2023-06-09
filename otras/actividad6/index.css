@@ -13,3 +13,15 @@ span {
 .dot::before {
 	content: "*";
 }
+
+/* Las filas de cada figura se deben mostrar en columna. */
+.figure {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Dentro de la fila los span deben ir de izquierda a derecha. */
+.row {
+	display: flex;
+	flex-direction: row;
+}
