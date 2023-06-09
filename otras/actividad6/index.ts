@@ -1,11 +1,29 @@
 // Funciones auxiliares
-const filledSquare = (): void => {};
+const filledSquare = (): void => {
+	const canvas: HTMLDivElement = document.querySelector('#cuadradoRelleno')!;
+	for (let rowCounter = 1; rowCounter <= 10; rowCounter++) {
+		const row = document.createElement('div');
+		row.classList.add('row');
+for (let columnCounter = 1; columnCounter <= 10; columnCounter++) {
+	const column = document.createElement('span');
+	column.classList.add('dot');
+	row.appendChild(column);
+}
+canvas.appendChild(row);
+	}
+};
 
-const emptySquare = (): void => {};
+const emptySquare = (): void => {
+	const canvas: HTMLDivElement = document.querySelector('#cuadradoSinRelleno')!;
+};
 
-const triangle = (): void => {};
+const triangle = (): void => {
+	const canvas: HTMLDivElement = document.querySelector('#triangulo')!;
+};
 
-const halfRhombus = (): void => {};
+const halfRhombus = (): void => {
+const canvas: HTMLDivElement = document.querySelector('#medioRombo')!;
+};
 
 // Función principal
 const main = (): void => {
