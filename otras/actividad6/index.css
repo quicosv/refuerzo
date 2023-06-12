@@ -7,7 +7,7 @@ span {
 
 /* Contenido generado para incluir el contenido de los span */
 .empty::before {
-	content: " ";
+	content: " ";
 }
 
 .dot::before {
