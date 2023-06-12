@@ -39,10 +39,12 @@ const emptySquare = (): void => {
 
 const triangle = (): void => {
 	const canvas: HTMLDivElement = document.querySelector('#triangulo')!;
+	for (let rowCounter = 1; rowCounter <= 10; rowCounter++) {}
 };
 
 const halfRhombus = (): void => {
 	const canvas: HTMLDivElement = document.querySelector('#medioRombo')!;
+	for (let rowCounter = 1; rowCounter <= 19; rowCounter++) {}
 };
 
 // Función principal
