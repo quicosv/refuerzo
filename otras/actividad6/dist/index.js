@@ -37,9 +37,30 @@ const emptySquare = () => {
 };
 const triangle = () => {
     const canvas = document.querySelector('#triangulo');
+    for (let rowCounter = 1; rowCounter <= 10; rowCounter++) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for (let columnCounter = 1; columnCounter <= rowCounter; columnCounter++) {
+            const column = document.createElement('span');
+            column.classList.add('dot');
+            row.appendChild(column);
+        }
+        canvas.appendChild(row);
+    }
 };
 const halfRhombus = () => {
     const canvas = document.querySelector('#medioRombo');
+    triangle();
+    for (let rowCounter = 9; rowCounter >= 1; rowCounter--) {
+        const row = document.createElement('div');
+        row.classList.add('row');
+        for (let columnCounter = 1; columnCounter <= rowCounter; columnCounter++) {
+            const column = document.createElement('span');
+            column.classList.add('dot');
+            row.appendChild(column);
+        }
+        canvas.appendChild(row);
+    }
 };
 const main = () => {
     filledSquare();
