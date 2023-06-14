@@ -7,7 +7,8 @@ span {
 
 /* Contenido generado para incluir el contenido de los span */
 .empty::before {
-	content: " ";
+	/* Para representar el código se usan valores hexadecimales. El caracter 160 se representa como A0 (16 por 10) */
+	content: "\00a0";
 }
 
 .dot::before {
