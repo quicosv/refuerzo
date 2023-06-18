@@ -6,6 +6,7 @@ import { Cronometro } from "./Cronometro";
 import { Reloj } from "./Reloj";
 import { Palindromo } from "./Palindromo";
 import { ContadorPalabras } from "./ContarPalabras";
+import { ListaPersonas } from "./ListaPersonas";
 
 ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 	<React.StrictMode>
@@ -13,6 +14,7 @@ ReactDOM.createRoot(document.getElementById("root") as HTMLElement).render(
 			<h1>Actividades Extra</h1>
 		</header>
 		<main>
+			<ListaPersonas/>
 			<ContadorPalabras/>
 			<Cronometro />
 			<Reloj />
