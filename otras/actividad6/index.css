@@ -1,0 +1,28 @@
+/* 
+Trato de usar una fuente en la que los caracteres ocupen lo mismo para que los dibujos salgan lo más parecido a como lo podríamos imaginar en braille.
+*/
+span {
+	font-family: 'Courier New', Courier, monospace;
+}
+
+/* Contenido generado para incluir el contenido de los span */
+.empty::before {
+	/* Para representar el código se usan valores hexadecimales. El caracter 160 se representa como A0 (16 por 10) */
+	content: "\00a0";
+}
+
+.dot::before {
+	content: "*";
+}
+
+/* Las filas de cada figura se deben mostrar en columna. */
+.figure {
+	display: flex;
+	flex-direction: column;
+}
+
+/* Dentro de la fila los span deben ir de izquierda a derecha. */
+.row {
+	display: flex;
+	flex-direction: row;
+}
