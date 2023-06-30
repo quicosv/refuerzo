@@ -2,7 +2,9 @@ import { ChangeEvent, FormEvent, useState } from "react";
 import { IMiembro } from "./interfaces/miembro.interface";
 
 export const Parejas = () => {
+	const [cuadroEdicion1, setCuadroEdicion1] = useState<string>("");
 	const [miembro1, setMiembro1] = useState<IMiembro>({ miembro: "" });
+	const [cuadroEdicion2, setCuadroEdicion2] = useState<string>("");
 	const [miembro2, setMiembro2] = useState<IMiembro>({ miembro: "" });
 	const [emparejaos, setEmparejaos] = useState<boolean>(false);
 	// Nos declaramos los arrays con ambos grupos
@@ -12,17 +14,22 @@ export const Parejas = () => {
 	const [posicionesDeParejas, setPosicionesDeParejas] = useState<number[]>([]);
 
 	const onChangeMiembro1 = (e: ChangeEvent<HTMLInputElement>) => {
-		setMiembro1({ miembro: e.target.value });
+		setCuadroEdicion1(e.target.value);
 	};
 
 	const onChangeMiembro2 = (e: ChangeEvent<HTMLInputElement>) => {
-		setMiembro2({ miembro: e.target.value });
+		setCuadroEdicion2(e.target.value);
 	};
 
 	const onSubmit = (e: FormEvent<HTMLFormElement>) => {
 		e.preventDefault();
-		setGrupo1([...grupo1,miembro1]);
-		setGrupo2([...grupo2,miembro2]);
+		setEmparejaos(false);
+		setMiembro1({ miembro: cuadroEdicion1 });
+		setMiembro2({ miembro: cuadroEdicion2 });
+		setGrupo1([...grupo1, miembro1]);
+		setGrupo2([...grupo2, miembro2]);
+		setCuadroEdicion1("");
+		setCuadroEdicion2("");
 	};
 
 	const generadorNumerosAleatoriosUnicos = (
@@ -53,14 +60,16 @@ export const Parejas = () => {
 		// generamos, por cada elemento del primer array grupo1, el índice que le correspondería
 		// de la pareja del grupo2, ya que ambos arrays serán iguales
 		// esto obtendrá un índice que apuntará a una pareja única y aleatoria de grupo2 para cada uno.
-		const posicionesDeParejas = generadorNumerosAleatoriosUnicos(
-			grupo1.length,
-			0,
-			grupo1.length - 1
-		);
-		// ponemos el useState de emparejaos a true para saber cuándo mostrar los resultados
-		if (grupo1.length > 0 && grupo2.length > 0) {
-			setEmparejaos(true);
+		try {
+			setPosicionesDeParejas(
+				generadorNumerosAleatoriosUnicos(grupo1.length, 0, grupo1.length - 1)
+			);
+			// ponemos el useState de emparejaos a true para saber cuándo mostrar los resultados
+			if (grupo1.length > 0 && grupo2.length > 0) {
+				setEmparejaos(true);
+			}
+		} catch (e) {
+			console.log(e);
 		}
 	};
 
@@ -79,12 +88,15 @@ export const Parejas = () => {
 			<button onClick={formarParejas}>Formar parejas</button>
 			{emparejaos && (
 				<>
-				<h3>Número de parejas: {grupo1.length}</h3>
-				<ul>
-					{grupo1.map((x,i) => (
-						<li key={i}>{x.miembro} está emparejado con {grupo2[posicionesDeParejas[i]].miembro}.</li>
-					))}
-				</ul>
+					<h3>Número de parejas: {grupo1.length}</h3>
+					<ul>
+						{grupo1.map((x, i) => (
+							<li key={i}>
+								{x.miembro} está emparejado con{" "}
+								{grupo2[posicionesDeParejas[i]].miembro}.
+							</li>
+						))}
+					</ul>
 				</>
 			)}
 		</article>
